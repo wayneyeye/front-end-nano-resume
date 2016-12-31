@@ -1,8 +1,7 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
- 
- var bio, education, work, projects;
+var bio, education, work, projects;
 // Bio Part
 bio = {
 	name : "Wayne Ye",
