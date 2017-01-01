@@ -8,7 +8,7 @@ bio = {
 	role : "Front-end Developer",
 	contacts : {
 		mobile: "222-333-4444",
-		emaile: "wayneye@udacity.com",
+		email: "wayneye@udacity.com",
 		github: "wayneye.github.io",
 		location: "Dallas, TX"
 	},
@@ -17,13 +17,35 @@ bio = {
 	biopic : "images/fry.jpg",
 	display : function() {
 		// display bio function goes from here!
-		console.log(bio);
 		var formattedName = HTMLheaderName.replace('%data%',bio.name);
-		console.log(formattedName);
+		var formattedRole = HTMLheaderRole.replace('%data%',bio.role);
+		var formattedMobile = HTMLmobile.replace('%data%',bio.contacts.mobile);
+		var formattedEmail = HTMLemail.replace('%data%',bio.contacts.email);
+		var formattedgithub = HTMLgithub.replace('%data%',bio.contacts.github);
+		var formattedlocation = HTMLlocation.replace('%data%',bio.contacts.location);
 		$('#header').prepend(formattedName);
+		$('#name').after(formattedRole);
+		$('#topContacts').append(formattedMobile);
+		$('#topContacts').append(formattedEmail);
+		$('#topContacts').append(formattedgithub);
+		$('#topContacts').append(formattedlocation);
+		$('#footerContacts').append(formattedMobile);
+		$('#footerContacts').append(formattedEmail);
+		$('#footerContacts').append(formattedgithub);
+		$('#footerContacts').append(formattedlocation);
+		//header picture area
+		var formattedbioPic = HTMLbioPic.replace('%data%',bio.biopic);
+		$('#header').append(formattedbioPic);
+		var formattedwelcomeMsg = HTMLwelcomeMsg.replace('%data%',bio.welcomeMessage);
+		$('#header').append(formattedwelcomeMsg);
+		$('#header').append(HTMLskillsStart);
+		bio.skills.forEach(function(item){
+			var skill = HTMLskills.replace('%data%',item);
+			$('#skills').append(skill);
+		})
 	}
  };
-// bio.display();
+bio.display();
 
 // Education Part
 education = {
