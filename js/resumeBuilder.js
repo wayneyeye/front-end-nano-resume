@@ -62,8 +62,8 @@ education = {
 			name : "University of Texas at Dallas",
 			location : "Dallas, TX",
 			degree : "Master of Science",
-			majors : ["Management Science"],
-			dates : "2017 -",
+			majors : ["Management Science", "Data Science"],
+			dates : "2017 - present",
 			url : "#UTDallas"
 		}
 	],
@@ -77,10 +77,40 @@ education = {
 	],
 	display : function() {
 		// display bio function goes from here!
-		console.log(education);
+		// console.log(education);
+		// full-time enrollment
+		education.schools.forEach(function(item){
+			// console.log('debug');
+			$('#education').append(HTMLschoolStart);
+			var formattedschoolNameDeg = HTMLschoolName.replace('%data%',item.name)
+			+ HTMLschoolDegree.replace('%data%',item.degree);
+			formattedschoolNameDeg.replace('#',item.url);
+			var formattedschoolDates = HTMLschoolDates.replace('%data%',item.dates);
+			var formattedschoolLocation = HTMLschoolLocation.replace('%data%',item.location);
+			var formattedschoolMajor = HTMLschoolMajor.replace('%data%',item.majors);
+			$('.education-entry').last().append(formattedschoolNameDeg);
+			$('.education-entry').last().append(formattedschoolDates);
+			$('.education-entry').last().append(formattedschoolLocation);
+			$('.education-entry').last().append(formattedschoolMajor);
+		});
+
+		// online-courses
+		$('#education').append(HTMLonlineClasses);
+		education.onlineCourses.forEach(function(item){
+			var formattedonlineclassTitleSchool = HTMLonlineTitle.replace('%data%',item.title) + 
+			HTMLonlineSchool.replace('%data%',item.school);
+			formattedonlineclassTitleSchool.replace('#',item.url);
+			var formattedonlineclassDate = HTMLonlineDates.replace('%data%',item.dates);
+			var formattedonlineURL = HTMLonlineURL.replace('%data%',item.url);
+			formattedonlineURL.replace('#',item.url);
+			$('#education').append(HTMLschoolStart);
+			$('.education-entry').last().append(formattedonlineclassTitleSchool);
+			$('.education-entry').last().append(formattedonlineclassDate);
+			$('.education-entry').last().append(formattedonlineURL);					
+		});
 	}
 };
-// education.display();
+education.display();
 // Work Part
 work = {
 	jobs : [
