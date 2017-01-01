@@ -85,26 +85,37 @@ education = {
 work = {
 	jobs : [
 		{
-			employer : "Nestle R&D",
-			title : "Process Engineer Intern",
-			location : "Shanghai, China",
-			dates : "2012 Summer",
-			description : "1. Designed Smart Coffee Machine\n 2. Helped contact key parts manufactors"		
-		},
-		{
 			employer : "ATCG Solutions",
 			title : "Junior Consultant",
 			location : "Richardson, TX",
 			dates : "2015 - 2016",
-			description : "1. Designed DB Schema\n 2. Developed SQL Server scripts for downstream analysis"		
+			description : "1. Designed DB Schema\n2. Developed SQL Server scripts for downstream analysis"		
+		},
+		{
+			employer : "Nestle R&D",
+			title : "Process Engineer Intern",
+			location : "Shanghai, China",
+			dates : "2012 Summer",
+			description : "1. Designed Smart Coffee Machine\n2. Helped contact key parts manufactors"		
 		}
 	],
 	display : function() {
 		// display bio function goes from here!
-		console.log(work);
+		// console.log(work);
+		work.jobs.forEach(function(item) {
+			$('#workExperience').append(HTMLworkStart);
+			var formattedworkTitle = HTMLworkEmployer.replace('%data%',item.employer)+HTMLworkTitle.replace('%data%',item.title);
+			var formattedworkDates = HTMLworkDates.replace('%data%',item.dates);
+			var formattedworkLocation = HTMLworkLocation.replace('%data%',item.location);
+			var formattedworkDescription = HTMLworkDescription.replace('%data%',item.description);	
+			$('.work-entry').last().append(formattedworkTitle);
+			$('.work-entry').last().append(formattedworkDates);
+			$('.work-entry').last().append(formattedworkLocation);
+			$('.work-entry').last().append(formattedworkDescription);
+		})		
 	}	
  };
- // work.display();
+ work.display();
 // Projects Part
 projects = {
 	projects : [
