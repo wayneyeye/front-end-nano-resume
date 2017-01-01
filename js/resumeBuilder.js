@@ -152,18 +152,31 @@ projects = {
 			title : "Front-end Developing",
 			dates : "In Progress",
 			description : "Developing an awesome website",
-			images : []
+			images : ['images/image1.png','images/image2.png']
 		},
 		{
 			title : "Developing a smart input method",
 			dates : "In Progress",
 			description : "Developing an awesome UI tools",
-			images : []
+			images : ['images/image1.png']
 		}
 	],
 	display : function() {
 		// display bio function goes from here!
-		console.log(projects);
+		// console.log(projects);
+		projects.projects.forEach(function(item){
+			$('#projects').append(HTMLprojectStart);
+			var formattedprojectTitle = HTMLprojectTitle.replace('%data%',item.title);
+			var formattedprojectDates = HTMLprojectDates.replace('%data%',item.dates);
+			var formattedprojectDescription = HTMLprojectDescription.replace('%data%',item.description);
+			$('.project-entry').last().append(formattedprojectTitle);	
+			$('.project-entry').last().append(formattedprojectDates);	
+			$('.project-entry').last().append(formattedprojectDescription);	
+			item.images.forEach(function(item){
+				var formattedprojectImg = HTMLprojectImage.replace('%data%',item);
+				$('.project-entry').last().append(formattedprojectImg);
+			});
+		});
 	}
 };
-// projects.display();
+projects.display();
