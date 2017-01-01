@@ -58,8 +58,28 @@ education = {
 // education.display();
 // Work Part
 work = {
-
+	jobs : [
+		{
+			employer : "Nestle R&D",
+			title : "Process Engineer Intern",
+			location : "Shanghai, China",
+			dates : "2012 Summer",
+			description : "1. Designed Smart Coffee Machine\n 2. Helped contact key parts manufactors"		
+		},
+		{
+			employer : "ATCG Solutions",
+			title : "Junior Consultant",
+			location : "Richardson, TX",
+			dates : "2015 - 2016",
+			description : "1. Designed DB Schema\n 2. Developed SQL Server scripts for downstream analysis"		
+		}
+	],
+	display : function() {
+		// display bio function goes from here!
+		console.log(work);
+	}	
  };
+ // work.display();
 // Projects Part
 projects = {
 
