@@ -18,6 +18,9 @@ bio = {
 	display : function() {
 		// display bio function goes from here!
 		console.log(bio);
+		var formattedName = HTMLheaderName.replace('%data%',bio.name);
+		console.log(formattedName);
+		$('#header').prepend(formattedName);
 	}
  };
 // bio.display();
