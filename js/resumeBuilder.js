@@ -178,5 +178,7 @@ projects = {
 			});
 		});
 	}
-};
-projects.display();
+};projects.display();
+// Add google maps
+$('#mapDiv').append(googleMap);
+initializeMap();
