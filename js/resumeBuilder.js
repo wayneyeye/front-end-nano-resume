@@ -46,18 +46,9 @@ bio = {
 	}
  };
 bio.display();
-
 // Education Part
 education = {
 	schools : [
-		{
-			name : "Northwestern University",
-			location : "Evanston, IL",
-			degree : "Master of Science",
-			majors : ["Engineering"],
-			dates : "2013 - 2015",
-			url : "#Northwestern"
-		},
 		{
 			name : "University of Texas at Dallas",
 			location : "Dallas, TX",
@@ -65,6 +56,14 @@ education = {
 			majors : ["Management Science", "Data Science"],
 			dates : "2017 - present",
 			url : "#UTDallas"
+		},
+		{
+			name : "Northwestern University",
+			location : "Evanston, IL",
+			degree : "Master of Science",
+			majors : ["Engineering"],
+			dates : "2013 - 2015",
+			url : "#Northwestern"
 		}
 	],
 	onlineCourses : [
@@ -145,7 +144,7 @@ work = {
 		})		
 	}	
  };
- work.display();
+work.display();
 // Projects Part
 projects = {
 	projects : [
