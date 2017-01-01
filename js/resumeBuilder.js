@@ -82,5 +82,23 @@ work = {
  // work.display();
 // Projects Part
 projects = {
-
+	projects : [
+		{
+			title : "Front-end Developing",
+			dates : "In Progress",
+			description : "Developing an awesome website",
+			images : []
+		},
+		{
+			title : "Developing a smart input method",
+			dates : "In Progress",
+			description : "Developing an awesome UI tools",
+			images : []
+		}
+	],
+	display : function() {
+		// display bio function goes from here!
+		console.log(projects);
+	}
 };
+// projects.display();
